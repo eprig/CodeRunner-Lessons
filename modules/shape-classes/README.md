@@ -2,6 +2,12 @@
 
 Work in `src/main/java/frc/robot/RobotContainer.java` and create new classes in the same package.
 
+## What you're making
+
+`Rectangle`, `Triangle`, and `Circle` classes that each know how to calculate their own
+perimeter and area. You'll create a few shapes and see their measurements, perimeter, and
+area logged in AdvantageScope, grouped by shape (for example `Rectangle/Area`).
+
 ## Steps
 
 1. Create a `Rectangle` class.

@@ -2,6 +2,12 @@
 
 This project starts from the AdvantageKit kitbot template with drive speed slowed down.
 
+## What you're making
+
+New driver controls for the kitbot: a **fast mode** button that doubles drive speed while
+held, and a **beyblade mode** button that spins the robot in place while held. By the end,
+the driver should still be able to drive around the field while the robot spins.
+
 ## Steps
 
 1. Add a fast-mode button that doubles drive speed while held.

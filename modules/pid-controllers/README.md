@@ -2,6 +2,12 @@
 
 This project starts from the AdvantageKit kitbot template with `FieldConstants.BLUE_HUB` defined.
 
+## What you're making
+
+Two PID controllers for the kitbot. One holds the shooter flywheel at a target speed. The
+other turns the whole robot to face the hub (`FieldConstants.BLUE_HUB`). You'll log the
+setpoints, measurements, and outputs so you can tune both in AdvantageScope.
+
 ## Steps
 
 1. Add a `PIDController` for the shooter flywheel.

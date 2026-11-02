@@ -2,6 +2,12 @@
 
 Work mainly in `src/main/java/frc/robot/RobotContainer.java`, `commands/`, and `subsystems/drive/Drive.java`.
 
+## What you're making
+
+A simulated robot that drives itself in a square during autonomous, plus controller buttons
+that run driving commands, including a figure-eight path around the field. You'll watch the
+robot's path in AdvantageScope.
+
 ## Steps
 
 1. Change the premade autonomous command from `Commands.none()` into a sequence that drives in a square.

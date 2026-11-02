@@ -2,6 +2,18 @@
 
 Work in `src/main/java/frc/robot/RobotContainer.java`, `FrcTeam.java`, `FrcAlliance.java`, and `FrcMatch.java`. Run this lesson with the CodeRunner Driver Station and enable teleop.
 
+## What you're making
+
+A match predictor. You'll make up six FRC teams with their last three match scores, split
+them into a red and a blue alliance, and predict which alliance wins based on each team's
+average score. When you enable teleop, the console should print something like:
+
+```
+Red predicted score: 225.0
+Blue predicted score: 210.0
+The red alliance is predicted to win!
+```
+
 ## Steps
 
 1. In `RobotContainer.teleopInit()`, create six `FrcTeam` objects. Give each team a team number and three made-up previous match scores.

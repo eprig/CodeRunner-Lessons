@@ -2,6 +2,13 @@
 
 Work in `src/main/java/frc/robot/RobotContainer.java`. Run this lesson with the CodeRunner Driver Station.
 
+## What you're making
+
+A robot program that shows the difference between code that runs once and code that runs
+every loop. You'll log which robot state is running, blink a pretend LED on a timer, and log
+live controller input (a button and a joystick), then watch all of it change in
+AdvantageScope.
+
 ## Steps
 
 1. Log `"RobotState"` as `"TeleopInit"` in `teleopInit()`.

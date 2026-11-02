@@ -2,6 +2,12 @@
 
 Work in `src/main/java/frc/robot/RobotContainer.java`. Run this lesson with the CodeRunner Driver Station.
 
+## What you're making
+
+A program that picks a random spot on the field and finds which of the field points is
+closest to it. In AdvantageScope you'll see all the field points, the random spot, and the
+closest point drawn on the field.
+
 ## Steps
 
 1. Hardcode a new `Translation2d` as the point you want to check.
