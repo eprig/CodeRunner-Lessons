@@ -9,6 +9,17 @@ numbers and making decisions with `if`.
 pick a number, ask for a guess, compare the guess to the number, give a hint. Each of those
 becomes a few lines of code, in that order.
 
+## What you're making
+
+A guessing game. The program secretly picks a number from 1 to 10, the user types a guess,
+and the program says whether the secret number is `higher`, `lower`, or `correct`. For
+example, if the secret number is 7:
+
+```
+Guess a number from 1 to 10: 4
+higher
+```
+
 ## Steps
 
 ### 1. Pick a secret number from 1 to 10

@@ -21,6 +21,19 @@ public class Main {
 Java reads `main` from top to bottom, one line at a time. Keep that in mind: you can't use
 a variable on a line *above* the one where you created it.
 
+## What you're making
+
+A program that asks for the user's name and age, greets them, and tells them today's date.
+When you're done, a run should look something like this:
+
+```
+What is your name? Sam
+Hello, Sam
+Today is 2026-10-28
+How old are you? 15
+You are 15 years old
+```
+
 ## Steps
 
 ### 1. Store your name in a variable

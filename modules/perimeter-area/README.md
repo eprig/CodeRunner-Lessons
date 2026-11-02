@@ -5,6 +5,23 @@ Work in `src/Main.java`. Run this lesson with the editor Run button.
 This lesson combines reading input with `Scanner` and choosing between options with
 `if`/`else if`. The new parts are decimal numbers and doing math in Java.
 
+## What you're making
+
+A shape calculator. The program shows a menu of shapes, asks for the measurements of the one
+the user picks, and prints that shape's perimeter and area. For example:
+
+```
+Pick a shape:
+1. Rectangle
+2. Triangle
+3. Circle
+1
+Length: 3
+Width: 5
+Perimeter: 16.0
+Area: 15.0
+```
+
 ## Steps
 
 ### 1. Ask for a rectangle's length and width
