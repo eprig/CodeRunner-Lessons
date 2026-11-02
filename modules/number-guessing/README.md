@@ -2,9 +2,8 @@
 
 Work in `src/Main.java`. Run this lesson with the editor Run button.
 
-The computer picks a secret number, and the user tries to guess it. You already know how to
-read a number with `Scanner` from **Hello, Name**. The new parts are random numbers and
-making decisions with `if`.
+The computer picks a secret number, and the user tries to guess it. The new parts are random
+numbers and making decisions with `if`.
 
 **Plan before you code.** Think about how you'd play this game with a friend, step by step:
 pick a number, ask for a guess, compare the guess to the number, give a hint. Each of those
@@ -14,7 +13,9 @@ becomes a few lines of code, in that order.
 
 ### 1. Pick a secret number from 1 to 10
 
-`Random` works a lot like `Scanner`: import it, create it once, then call methods on it.
+`Random` is a tool Java gives you for picking random numbers. To use it, import it, create
+it once, then call methods on it. Import lines go at the very top of the file, above
+`public class Main`:
 
 ```java
 import java.util.Random;
@@ -39,8 +40,33 @@ Store a random number from **1 to 10** in a variable called `secret`.
 
 ### 2. Read the user's guess
 
-Ask the user for a guess and store it in an `int` called `guess`. You've done this before:
-look at how you read the age in Hello, Name.
+A `Scanner` reads what the user types into the terminal. It's set up the same way as
+`Random`. Import it at the top of the file:
+
+```java
+import java.util.Scanner;
+```
+
+Create it once, near the start of `main`:
+
+```java
+Scanner input = new Scanner(System.in);
+```
+
+Then print a question and read the answer. A guess is a whole number, so use `nextInt()`:
+
+```java
+System.out.print("How many robots are on an alliance? ");
+int robots = input.nextInt(); // waits for the user to type a number and press Enter
+```
+
+Using `print` instead of `println` keeps the cursor on the same line, so the user types
+right after the question.
+
+Ask the user for a guess and store it in an `int` called `guess`.
+
+> **Check your work:** when the program reaches `nextInt()`, it stops and waits. If it seems
+> frozen, click into the terminal, type a number, and press Enter.
 
 ### 3. Print `higher`, `lower`, or `correct`
 

@@ -2,9 +2,8 @@
 
 Work in `src/Main.java`. Run this lesson with the editor Run button.
 
-This lesson combines what you've already learned: reading input with `Scanner` (Hello, Name)
-and choosing between options with `if`/`else if` (Number Guessing). The new parts are
-decimal numbers and doing math in Java.
+This lesson combines reading input with `Scanner` and choosing between options with
+`if`/`else if`. The new parts are decimal numbers and doing math in Java.
 
 ## Steps
 
@@ -17,7 +16,23 @@ whole numbers, so use **`double`**, which can hold decimals:
 double speed = 3.75;
 ```
 
-`Scanner` has a matching method, `nextDouble()`. It works just like `nextInt()`.
+To read a decimal from the user, use `Scanner`'s `nextDouble()` method. As a reminder, a
+`Scanner` needs an import at the very top of the file:
+
+```java
+import java.util.Scanner;
+```
+
+Then create it once near the start of `main`, and use it to read each answer:
+
+```java
+Scanner input = new Scanner(System.in);
+
+System.out.print("How fast is the robot? ");
+double speed = input.nextDouble(); // waits for the user to type a number and press Enter
+```
+
+For whole numbers, use `nextInt()` instead (you'll need that in step 3).
 
 Ask the user for a length and a width, and store each one in its own `double` variable.
 
@@ -64,9 +79,23 @@ Pick a shape:
 3. Circle
 ```
 
-Then use an `if` / `else if` / `else` chain on the choice, the same way you compared the
-guess in Number Guessing. Move your rectangle code from step 2 inside the `1` branch. The
-`else` branch should handle a choice that isn't 1, 2, or 3.
+Then use an `if` / `else if` / `else` chain on the choice:
+
+```java
+if (mode == 1) {
+  System.out.println("Driving");
+} else if (mode == 2) {
+  System.out.println("Shooting");
+} else {
+  System.out.println("Unknown mode");
+}
+```
+
+Java checks the conditions from top to bottom and runs **only the first one that is true**.
+Two `==` *compares* values; one `=` would *store* a value instead.
+
+Move your rectangle code from step 2 inside the `1` branch. The `else` branch should handle
+a choice that isn't 1, 2, or 3.
 
 **Build in small pieces.** Before you write any triangle or circle math, put a placeholder
 `println` in each branch (like `"You picked triangle"`). Run it and try every option,
@@ -129,7 +158,8 @@ System.out.printf("Speed: %.2f m/s%n", speed); // Speed: 3.75 m/s
 
 - **Handle invalid input without crashing.** There are several kinds of bad input. Your
   `else` already catches a menu choice that's out of range. What about someone typing `abc`?
-  (Remember `hasNextInt()` from Hello, Name. Scanner also has `hasNextDouble()`.) And what
+  `input.hasNextInt()` is `true` if the user typed a whole number, and `hasNextDouble()`
+  does the same for decimals, so you can check *before* reading. And what
   about a negative length? Does a shape with a side of `-3` make sense?
 - **Add a cube and calculate its volume.** Add a `4` to the menu. Volume is the space inside
   a 3D shape, and a cube's volume is side × side × side.
