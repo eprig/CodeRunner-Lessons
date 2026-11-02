@@ -119,8 +119,16 @@ values into a folder:
 Logger.recordOutput("Battery/Energy", fresh.energyWattHours());
 ```
 
-In `robotPeriodic()`, create a `Rectangle` and log its length, width, perimeter, and area
-under `Rectangle/` (for example `Rectangle/Length` and `Rectangle/Area`).
+In `robotPeriodic()`, create a `Rectangle` and log four values using these exact keys:
+
+| Key                   | Value                        |
+| --------------------- | ---------------------------- |
+| `Rectangle/Length`    | the rectangle's length       |
+| `Rectangle/Width`     | the rectangle's width        |
+| `Rectangle/Perimeter` | what `perimeter()` returns   |
+| `Rectangle/Area`      | what `area()` returns        |
+
+Each one is a single `Logger.recordOutput` line, like the `Battery/Energy` example above.
 
 > **Think about it:** `length` and `width` are `private`, so `RobotContainer` can't read them
 > from your rectangle. You could log the numbers you passed into the constructor, or you
@@ -134,8 +142,13 @@ under `Rectangle/` (for example `Rectangle/Length` and `Rectangle/Area`).
 ### 5. Create `Triangle` and `Circle` classes and log them too
 
 Make a `Triangle.java` and a `Circle.java`, each with its own fields, constructor,
-`perimeter()`, and `area()`. Then create one of each in `robotPeriodic()` and log their
-measurements, perimeter, and area under `Triangle/` and `Circle/`.
+`perimeter()`, and `area()`. Then create one of each in `robotPeriodic()` and log them using
+these exact keys:
+
+| Shape    | Keys                                                                      |
+| -------- | ------------------------------------------------------------------------- |
+| Triangle | `Triangle/Base`, `Triangle/Height`, `Triangle/Perimeter`, `Triangle/Area` |
+| Circle   | `Circle/Radius`, `Circle/Perimeter`, `Circle/Area`                        |
 
 **Triangle (base and height).** Treat it as a *right* triangle, the kind with a square
 corner.
@@ -206,5 +219,7 @@ corner.
     System.out.println(m.name() + " draws " + m.currentDrawAmps() + " amps");
   }
   ```
-  Your loop needs to log under `Rectangle/`, `Triangle/`, and `Circle/` without knowing
-  which shape it has. How could you build the key from the shape's `name()`?
+  Your loop should log `<name>/Perimeter` and `<name>/Area` for every shape, so you end up
+  with the same `Rectangle/Area`, `Triangle/Area`, and `Circle/Area` keys as before. If
+  `name()` returns `"Rectangle"`, how could you use `+` to build the key
+  `"Rectangle/Area"` from it?

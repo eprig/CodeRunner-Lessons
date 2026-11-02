@@ -70,14 +70,18 @@ class, but outside of any method (next to the constructor is a good spot):
 private boolean intakeDeployed = false;
 ```
 
-Create a `boolean` field for the LED. Then, in `teleopPeriodic()`, flip it and log it with
-a key like `"LED"`.
+Create a `boolean` field for the LED. Then, in `teleopPeriodic()`, flip it and log it under
+the key `"LED/On"`:
+
+```java
+Logger.recordOutput("LED/On", yourLedField);
+```
 
 > **Common mistake:** if you create the boolean *inside* `teleopPeriodic()`, it's created
 > fresh every loop with the same starting value. Flip it once and it ends up the same every
 > single time.
 
-> **Check your work:** in AdvantageScope, put `LED` on a line graph and zoom way in. It
+> **Check your work:** in AdvantageScope, put `LED/On` on a line graph and zoom way in. It
 > should switch between `true` and `false` on every loop.
 
 > **Think about it:** how many times a second does your LED flip? Could a person even see a
@@ -108,10 +112,11 @@ Change your LED so it flips only every half second (or any slower timing you lik
 - Each loop, how can you tell whether enough time has passed since the last flip?
 - When you do flip the LED, what else needs to be updated?
 
-> **Testing tip:** also log the elapsed time while you're working on this. Watching it climb
-> and reset in AdvantageScope makes it much easier to see what your code is doing.
+> **Testing tip:** also log the time since the last flip under the key
+> `"LED/SecondsSinceFlip"`. Watching it climb and reset in AdvantageScope makes it much
+> easier to see what your code is doing.
 
-> **Check your work:** on a line graph, `LED` should now stay `true` for half a second, then
+> **Check your work:** on a line graph, `LED/On` should now stay `true` for half a second, then
 > `false` for half a second, and so on.
 
 ### 5. Create an Xbox controller object
@@ -150,15 +155,21 @@ Create an `XboxController` field on port `0`.
 | `getRightX()`                                  | the right stick's left/right position          |
 | `getRightY()`                                  | the right stick's up/down position             |
 
-In `teleopPeriodic()`, log whether the A button is pressed, with a key like `"Controller/A"`.
+In `teleopPeriodic()`, log whether the A button is pressed under the key `"Controller/A"`.
+The value is whatever `getAButton()` returns:
+
+```java
+Logger.recordOutput("Controller/A", yourController.getAButton());
+```
 
 > **Check your work:** with teleop enabled, hold A. The value in AdvantageScope should be
 > `true` only while you're holding it.
 
 ### 7. Log a joystick value
 
-In `teleopPeriodic()`, log one of the joystick values from the table, with a key like
-`"Controller/LeftY"`. Then use keyboard controls to change it.
+In `teleopPeriodic()`, log the left stick's up/down value (`getLeftY()`) under the key
+`"Controller/LeftY"`, the same way you logged the A button. Then use keyboard controls to
+change it.
 
 > **Check your work:** the value should sit near `0` when you let go, and reach `-1` or `1`
 > when you push all the way.
@@ -173,8 +184,8 @@ In `teleopPeriodic()`, log one of the joystick values from the table, with a key
   ```java
   boolean readyToShoot = hasGamePiece && shooterAtSpeed;
   ```
-  You can chain more than two with more `&&`. Log your boolean and test it by pressing
-  A, B, X, and Y together.
+  You can chain more than two with more `&&`. Log your boolean under the key
+  `"Controller/AllFaceButtons"` and test it by pressing A, B, X, and Y together.
 - **Log a `Pose2d` and increment X/Y when the joysticks move.** A `Pose2d` is a robot's
   position on the field (x and y in meters) plus which way it's facing. You'll need these
   imports:
@@ -190,4 +201,5 @@ In `teleopPeriodic()`, log one of the joystick values from the table, with a key
   from the old one's values. Where should the pose be stored so it's remembered between
   loops? Each loop, how much should you add to x and y? (Hint: the stick goes up to `1`, and
   the loop runs 50 times a second. Adding a full `1` meter every loop would be very fast!)
-  Log the pose and put it on a 2D field view in AdvantageScope to watch it move.
+  Log the pose under the key `"Pose"` and put it on a 2D field view in AdvantageScope to
+  watch it move.

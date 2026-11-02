@@ -207,8 +207,12 @@ boolean overheating = motorTempCelsius > 80;
   ```java
   Logger.recordOutput("Battery/Voltage", 12.6);
   ```
-  You can build a key with `+`, for example `"Teams/" + someNumber`. Which class already
-  visits every team in a loop? That's a good place to log.
+  Log each team under the key `Teams/<team number>/PredictedScore`, for example
+  `Teams/5885/PredictedScore`. You can build that key with `+`:
+  ```java
+  "Teams/" + teamNumber + "/PredictedScore"
+  ```
+  Which class already visits every team in a loop? That's a good place to log.
 - **Add a margin of victory.** The margin is how many points the winner wins by. Subtracting
   in the wrong order gives a negative number, so `Math.abs` can help: `Math.abs(-15.0)` is
   `15.0`. Print it with the winner.

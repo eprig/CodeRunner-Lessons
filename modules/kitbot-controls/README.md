@@ -166,9 +166,18 @@ Some things to work out:
   ```java
   controller.back().onTrue(Commands.runOnce(() -> slowMode = !slowMode));
   ```
-  This only works on a **field** of the class. A lambda can't change a local variable. Log
-  the mode with `Logger.recordOutput("SomeKey", value)` so you can see it in AdvantageScope
-  (it needs `import org.littletonrobotics.junction.Logger;`).
+  This only works on a **field** of the class. A lambda can't change a local variable.
+
+  Log the mode under the key `"RedAllianceMode"` (`true` when red mode is on) so you can
+  see it in AdvantageScope. A lambda can run more than one line if you wrap it in `{ }`, so
+  you can log right after you flip the mode:
+  ```java
+  controller.back().onTrue(Commands.runOnce(() -> {
+    slowMode = !slowMode;
+    Logger.recordOutput("SlowMode", slowMode);
+  }));
+  ```
+  `Logger` needs `import org.littletonrobotics.junction.Logger;` at the top of the file.
 - **Mirror the controls when red-alliance mode is active.** Red drivers stand at the other
   end of the field, so "away from me" is the field's **negative** x direction. Which part of
   your field-relative beyblade driving needs to flip? (`Rotation2d.k180deg` is a half turn.)

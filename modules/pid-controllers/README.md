@@ -174,7 +174,8 @@ with `whileTrue`. A and both bumpers are already used.
 
 > **Check your work:** drive somewhere, then hold your aim button. The robot should turn to
 > face the hub and stay pointed at it. To see the hub on the field, log
-> `FieldConstants.BLUE_HUB_POSE` with `Logger.recordOutput` and put it on the 2D field view
+> `FieldConstants.BLUE_HUB_POSE` under the key `"Aim/HubPose"` inside your aiming command
+> (see step 5 for the `Logger` import) and put it on the 2D field view
 > too.
 
 ### 5. Log setpoints, measurements, and PID outputs, then tune
@@ -187,7 +188,8 @@ with `whileTrue`. A and both bumpers are already used.
 Logger.recordOutput("Arm/SetpointRad", targetAngle);
 ```
 
-For each PID, log three numbers, right next to where you call `calculate`. For example:
+For each PID, log three numbers using these exact keys. Put the lines right after you call
+`calculate`, inside the same `run(...)` lambda, so they're logged every loop:
 
 | Key                         | Value                           |
 | --------------------------- | ------------------------------- |

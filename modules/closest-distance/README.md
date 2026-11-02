@@ -141,12 +141,23 @@ Translation2d[] spots = someList.toArray(new Translation2d[0]);
 // the `new Translation2d[0]` just tells toArray what kind of array to make
 ```
 
-In `robotPeriodic()`, log three things: all the field points, the random point, and the
-closest point. Give each one a clear key, for example `FieldPoints`, `RandomPoint`, and
-`ClosestPoint`.
+At the end of `robotPeriodic()`, after you've found the closest point, log these three
+values using these exact keys:
 
-Run the Driver Station, open AdvantageScope, and find your keys (they show up inside
-`RealOutputs`). Put all three on a 2D field view.
+| Key                            | Value                                              |
+| ------------------------------ | -------------------------------------------------- |
+| `ClosestDistance/FieldPoints`  | all the field points (turn the list into an array) |
+| `ClosestDistance/RandomPoint`  | your random point                                  |
+| `ClosestDistance/ClosestPoint` | the closest field point you found                  |
+
+Each one is a single line. Only the key and the variable change:
+
+```java
+Logger.recordOutput("ClosestDistance/RandomPoint", yourRandomPoint);
+```
+
+Run the Driver Station, open AdvantageScope, and find the `ClosestDistance` folder (it shows
+up inside `RealOutputs`). Put all three keys on a 2D field view.
 
 > **Check your work:** the closest point should sit right on top of one of the field points,
 > and it should be the one nearest the random point. If you made a new random point every
@@ -186,9 +197,9 @@ Replace your whole loop with one call to `nearest()`. Keep your logging.
 
 ## Bonus
 
-- **Log the distance to the closest point.** `getDistance()` gives you a `double`, and
-  `Logger.recordOutput` can log a number with a key, just like a point. A number is easiest
-  to read on a line graph in AdvantageScope.
+- **Log the distance to the closest point.** `getDistance()` gives you a `double`. Log it
+  under the key `ClosestDistance/DistanceMeters`, the same way you logged the points. A
+  number is easiest to read on a line graph in AdvantageScope.
 - **Add more points to the field.** Add more `new Translation2d(...)` lines inside the
   `List.of(...)` at the top of the class. Put a comma between each one, but not after the
   last one. Keep them inside the field, then check that your closest-point code still works
