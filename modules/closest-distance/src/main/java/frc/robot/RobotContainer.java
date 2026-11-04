@@ -32,5 +32,7 @@ public class RobotContainer {
   /**
    * Called every loop while the robot is running. Use this method for the closest-distance lesson.
    */
-  public void robotPeriodic() {}
+  public void robotPeriodic() {
+    // Start working here!
+  }
 }
