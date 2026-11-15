@@ -2,12 +2,99 @@
   "schemaVersion": 1,
   "modules": [
     {
-      "id": "hello-name",
-      "title": "Hello, Name",
-      "description": "Variables, terminal input, and printing values.",
-      "subdir": "modules/hello-name",
-      "kind": "plain-java",
-      "order": 10
+      "folder": "frcsoftware.org",
+      "description": "Lesson Templates and Solutions to follow along with frcsoftware.org",
+      "order": 20,
+      "modules": [
+        {
+          "id": "stage0-template",
+          "title": "Stage 0 Template",
+          "description": "",
+          "repo": "frcsoftware/stage0-template",
+          "kind": "plain-java",
+          "order": 10
+        },
+        {
+          "id": "stage0-solution",
+          "title": "Stage 0 Solution",
+          "description": "",
+          "repo": "frcsoftware/stage0-solution",
+          "kind": "plain-java",
+          "order": 11
+        },
+        {
+          "id": "stage1a-template-rev",
+          "title": "Stage 1A Template - REV",
+          "description": "",
+          "repo": "frcsoftware/Stage1A-template-REV",
+          "kind": "robot",
+          "order": 12
+        },
+        {
+          "id": "stage1a-solution-rev",
+          "title": "Stage 1A Solution - REV",
+          "description": "",
+          "repo": "frcsoftware/Stage1A-Solution-REV",
+          "kind": "robot",
+          "order": 13
+        },
+        {
+          "id": "stage1b-template-rev",
+          "title": "Stage 1B Template - REV",
+          "description": "",
+          "repo": "frcsoftware/Stage1B-Template-REV",
+          "kind": "robot",
+          "order": 14
+        },
+        {
+          "id": "stage1b-solution-rev",
+          "title": "Stage 1B Solution - REV",
+          "description": "",
+          "repo": "frcsoftware/Stage1B-Solution-REV",
+          "kind": "robot",
+          "order": 15
+        }
+      ]
+    },
+    {
+      "folder": "Team 2207 Past Robot Code",
+      "description": "Robot code from previous seasons",
+      "order": 30,
+      "modules": [
+        {
+          "id": "2024-Crescendo-RobotCode",
+          "title": "2024 Crescendo",
+          "description": "Robot Code from the 2024 season, Crescendo",
+          "repo": "FRC2207/2024-Crescendo-RobotCode",
+          "kind": "robot",
+          "order": 10
+        },
+        {
+          "id": "2025_Reefscape_Robot_Code",
+          "title": "2024 Reefscape",
+          "description": "Robot Code from the 2025 season, Reefscape",
+          "repo": "FRC2207/2025_Reefscape_Robot_Code",
+          "kind": "robot",
+          "order": 11
+        },
+        {
+          "id": "2026Rebuilt",
+          "title": "2024 Rebuilt",
+          "description": "Robot Code from the 2026 season, Rebuilt",
+          "repo": "FRC2207/2026Rebuilt",
+          "kind": "robot",
+          "order": 12
+        }
+      ]
+    },
+    {
+      "id": "2207library",
+      "title": "2207 Library",
+      "description": "Our reusable robot code template",
+      "subdir": "FRC2207/2207library",
+      "preserveGit": true,
+      "kind": "robot",
+      "order": 40
     }
   ]
 }
