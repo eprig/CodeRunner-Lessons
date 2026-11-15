@@ -91,7 +91,7 @@
       "id": "2207library",
       "title": "2207 Library",
       "description": "Our reusable robot code template",
-      "subdir": "FRC2207/2207library",
+      "repo": "FRC2207/2207library",
       "preserveGit": true,
       "kind": "robot",
       "order": 40
